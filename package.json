@@ -10,18 +10,19 @@
 		"Other"
 	],
 	"activationEvents": [
-				"onCommand:uview-plugin.helloWorld",
-				"onLanguage:javascript"
+				"onLanguage:vue"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
-		"commands": [
+		"commands": [],
+		"snippets": [
 			{
-				"command": "uview-plugin.helloWorld",
-				"title": "Hello World"
-			}
+				"language": "vue-html",
+				"path": "./src/snippets/vue_uview_ui.json"
+				}
 		]
 	},
+	
 	"scripts": {
 		"vscode:prepublish": "yarn run compile",
 		"compile": "tsc -p ./",
