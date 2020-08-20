@@ -9,26 +9,29 @@
     "body": ["<u-icon name=\"$1\"></u-icon>"],
     "description": "icon"
   },
-  "u-image":{
+  "u-image": {
     "prefix": "u-image",
-    "body": [
-      "<u-image width=\"$1\" height=\"$2\" :src=\"$3\"></u-image>"
-    ],
+    "body": ["<u-image width=\"$1\" height=\"$2\" :src=\"$3\"></u-image>"],
     "description": "image"
   },
-  "u-cell-group":{
+  "u-cell-group": {
     "prefix": "u-cell-group",
-    "body": [
-      "<u-cell-group>$1</u-cell-group>"
-    ],
+    "body": ["<u-cell-group>$1</u-cell-group>"],
     "description": "cell-group"
   },
-  "u-cell-item":{
+  "u-cell-item": {
     "prefix": "u-cell-item",
-    "body": [
-      "<u-cell-item :title=\"$1\" :value=\"$2\"></u-cell-item>"
-    ],
+    "body": ["<u-cell-item :title=\"$1\" :value=\"$2\"></u-cell-item>"],
     "description": "cell-item"
   },
-  
+  "u-badge": {
+    "prefix": "u-badge",
+    "body": ["<u-badge type=\"${1:success}\"></u-badge>"],
+    "description": "徽标"
+  },
+  "u-tag": {
+    "prefix": "u-tag",
+    "body": ["<u-tag text=\"${1}\" type=\"${2:success}\"></u-tag>"],
+    "description": "Tag 标签"
+  }
 }
