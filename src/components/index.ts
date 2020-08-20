@@ -5,6 +5,7 @@ export interface Component {
   props: ComponentProp;
   events?: ComponentEvents;
   slot?: ComponentSlot;
+  [other: string]: any;
   getOthersInfo?():string
 }
 
