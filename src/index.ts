@@ -51,7 +51,7 @@ export default class ProvideHover implements HoverProvider {
         const slotList = Object.keys(slot);
         t += '* slot \n';
         slotList.forEach((key) => {
-          t += ` * **${key}**: (${slot[key].desc} \n`;
+          t += ` * **${key}**: ${slot[key].desc} \n`;
         });
       }
 

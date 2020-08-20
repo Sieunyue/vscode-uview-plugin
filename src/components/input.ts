@@ -1,5 +1,8 @@
-const t = {
-  c: 'input',
+import { Component, getOthersInfo } from './index';
+export const input: Component = {
+  prefix: 'u-input',
+  description: 'input',
+  body: ['<u-input></u-input>'],
   props: {
     type: {
       desc: '模式选择，见上方说明',
@@ -47,18 +50,18 @@ const t = {
       options: 'false'
     },
     height: { desc: '高度，单位rpx', type: 'number | string', default: 'text类型时为70，textarea时为100' },
-    'cursor-spacing 1.4.4': { desc: '指定光标与键盘的距离，单位px', type: 'number | string', default: '0' },
-    'selection-start 1.5.6': {
+    'cursor-spacing': { desc: '指定光标与键盘的距离，单位px', type: 'number | string', default: '0' },
+    'selection-start': {
       desc: '光标起始位置，自动聚焦时有效，需与selection-end搭配使用',
       type: 'number | string',
       default: '-1'
     },
-    'selection-end 1.5.6': {
+    'selection-end': {
       desc: '光标结束位置，自动聚焦时有效，需与selection-start搭配使用',
       type: 'number | string',
       default: '-1'
     },
-    'trim 1.5.8': { desc: '是否自动去除两端的空格', type: 'boolean', default: 'true', options: 'false' }
-  }
+    'trim': { desc: '是否自动去除两端的空格', type: 'boolean', default: 'true', options: 'false' }
+  },
+  getOthersInfo
 };
-

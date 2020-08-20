@@ -1,12 +1,7 @@
-import { Component, ComponentProp, ComponentEvents, ComponentSlot } from './index';
+import { Component, getOthersInfo} from './index';
 
-interface CellComponent extends Component {
-  'item-props': ComponentProp;
-  'item-slot': ComponentSlot;
-  'item-event': ComponentEvents;
-}
 
-export const cell: CellComponent = {
+export const cell: Component = {
   prefix: 'u-cell',
   description: 'cell 单元格',
   body: ['<u-cell-${1}>${2}</u-cell-${1}'],
@@ -57,28 +52,6 @@ export const cell: CellComponent = {
     label: { desc: '自定义label内容，需同时设置use-label-slot为true' }
   },
   'item-event': { click: { desc: '点击cell列表时触发', params: 'index' } },
-  getOthersInfo() {
-    const itemPropList = Object.keys(this['item-props']);
-    const itemSlotList = Object.keys(this['item-slot']);
-    const itemEvent = Object.keys(this['item-event']);
-
-    let t = '* item-props \n';
-    itemPropList.forEach((key) => {
-      t += ` * **${key}**: {*${this['item-props'][key].type || 'string'}*} ${this['item-props'][key].default || ''} ${
-        this['item-props'][key].options || ''
-      } ${this['item-props'][key].desc} \r\n`;
-    });
-
-    t += '* item-slot \n';
-    itemSlotList.forEach((key) => {
-      t += ` * **${key}**: ${this['item-slot'][key].desc} \r\n`;
-    });
-
-    t += '* item-event \n';
-    itemEvent.forEach((key) => {
-      t += ` * **${key}**: (${this['item-event'][key].params})  ${this['item-event'][key].desc} \n`;
-    });
-
-    return t;
-  }
+  getOthersInfo
+  
 };
