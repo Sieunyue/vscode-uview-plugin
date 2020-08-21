@@ -1,17 +1,9 @@
-# uview-plugin README
-
-This is the README for your extension "uview-plugin". After writing up a brief description, we recommend including the following sections.
-
 ## Features
 
-* [x] icon
-* [x] image
-* [x] button
-* [ ] layout
-* [x] cell
-* [x] badge
-* [x] tag
+![auto](./icon/1.gif)
 
+
+![auto](./icon/2.gif)
 
 ## Known Issues
 

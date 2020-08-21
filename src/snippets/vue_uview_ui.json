@@ -1,37 +1,108 @@
 {
-  "u-button": {
-    "prefix": "u-button",
-    "body": ["<u-button type=\"${1:info}\">$2</u-button>"],
-    "description": "button"
+  "icon": { "prefix": "u-icon", "body": ["<u-icon></u-icon>"], "description": "icon" },
+  "image": { "prefix": "u-image", "body": ["<u-image></u-image>"], "description": "image" },
+  "button": { "prefix": "u-button", "body": ["<u-button type=\"${1:info}\">${2}</u-button>"], "description": "button" },
+  "layout": { "prefix": "u-layout", "body": ["<u-layout></u-layout>"], "description": "layout" },
+  "cell": { "prefix": "u-cell", "body": ["<u-cell></u-cell>"], "description": "cell" },
+  "badge": { "prefix": "u-badge", "body": ["<u-badge></u-badge>"], "description": "badge" },
+  "tag": { "prefix": "u-tag", "body": ["<u-tag></u-tag>"], "description": "tag" },
+  "input": { "prefix": "u-input", "body": ["<u-input></u-input>"], "description": "input" },
+  "form": { "prefix": "u-form", "body": ["<u-form></u-form>"], "description": "form" },
+  "calendar": { "prefix": "u-calendar", "body": ["<u-calendar></u-calendar>"], "description": "calendar" },
+  "select": { "prefix": "u-select", "body": ["<u-select></u-select>"], "description": "select" },
+  "keyboard": { "prefix": "u-keyboard", "body": ["<u-keyboard></u-keyboard>"], "description": "keyboard" },
+  "picker": { "prefix": "u-picker", "body": ["<u-picker></u-picker>"], "description": "picker" },
+  "rate": { "prefix": "u-rate", "body": ["<u-rate></u-rate>"], "description": "rate" },
+  "search": { "prefix": "u-search", "body": ["<u-search></u-search>"], "description": "search" },
+  "number-box": { "prefix": "u-number-box", "body": ["<u-number-box></u-number-box>"], "description": "numberBox" },
+  "upload": { "prefix": "u-upload", "body": ["<u-upload></u-upload>"], "description": "upload" },
+  "verification-code": {
+    "prefix": "u-verification-code",
+    "body": ["<u-verification-code></u-verification-code>"],
+    "description": "verificationCode"
   },
-  "u-icon": {
-    "prefix": "u-icon",
-    "body": ["<u-icon name=\"$1\"></u-icon>"],
-    "description": "icon"
+  "field": { "prefix": "u-field", "body": ["<u-field></u-field>"], "description": "field" },
+  "checkbox": { "prefix": "u-checkbox", "body": ["<u-checkbox></u-checkbox>"], "description": "checkbox" },
+  "radio": { "prefix": "u-radio", "body": ["<u-radio></u-radio>"], "description": "radio" },
+  "switch": { "prefix": "u-switch", "body": ["<u-switch></u-switch>"], "description": "switch" },
+  "slider": { "prefix": "u-slider", "body": ["<u-slider></u-slider>"], "description": "slider" },
+  "circle-progress": {
+    "prefix": "u-circle-progress",
+    "body": ["<u-circle-progress></u-circle-progress>"],
+    "description": "circleProgress"
   },
-  "u-image": {
-    "prefix": "u-image",
-    "body": ["<u-image width=\"$1\" height=\"$2\" :src=\"$3\"></u-image>"],
-    "description": "image"
+  "line-progress": {
+    "prefix": "u-line-progress",
+    "body": ["<u-line-progress></u-line-progress>"],
+    "description": "lineProgress"
   },
-  "u-cell-group": {
-    "prefix": "u-cell-group",
-    "body": ["<u-cell-group>$1</u-cell-group>"],
-    "description": "cell-group"
+  "table": { "prefix": "u-table", "body": ["<u-table></u-table>"], "description": "table" },
+  "count-down": { "prefix": "u-count-down", "body": ["<u-count-down></u-count-down>"], "description": "countDown" },
+  "count-to": { "prefix": "u-count-to", "body": ["<u-count-to></u-count-to>"], "description": "countTo" },
+  "action-sheet": {
+    "prefix": "u-action-sheet",
+    "body": ["<u-action-sheet></u-action-sheet>"],
+    "description": "actionSheet"
   },
-  "u-cell-item": {
-    "prefix": "u-cell-item",
-    "body": ["<u-cell-item :title=\"$1\" :value=\"$2\"></u-cell-item>"],
-    "description": "cell-item"
+  "alert-tips": { "prefix": "u-alert-tips", "body": ["<u-alert-tips></u-alert-tips>"], "description": "alertTips" },
+  "toast": { "prefix": "u-toast", "body": ["<u-toast></u-toast>"], "description": "toast" },
+  "notice-bar": { "prefix": "u-notice-bar", "body": ["<u-notice-bar></u-notice-bar>"], "description": "noticeBar" },
+  "top-tips": { "prefix": "u-top-tips", "body": ["<u-top-tips></u-top-tips>"], "description": "topTips" },
+  "collapse": { "prefix": "u-collapse", "body": ["<u-collapse></u-collapse>"], "description": "collapse" },
+  "popup": { "prefix": "u-popup", "body": ["<u-popup></u-popup>"], "description": "popup" },
+  "swipe-action": {
+    "prefix": "u-swipe-action",
+    "body": ["<u-swipe-action></u-swipe-action>"],
+    "description": "swipeAction"
   },
-  "u-badge": {
-    "prefix": "u-badge",
-    "body": ["<u-badge type=\"${1:success}\"></u-badge>"],
-    "description": "徽标"
+  "modal": { "prefix": "u-modal", "body": ["<u-modal></u-modal>"], "description": "modal" },
+  "full-screen": {
+    "prefix": "u-full-screen",
+    "body": ["<u-full-screen></u-full-screen>"],
+    "description": "fullScreen"
   },
-  "u-tag": {
-    "prefix": "u-tag",
-    "body": ["<u-tag text=\"${1}\" type=\"${2:success}\"></u-tag>"],
-    "description": "Tag 标签"
-  }
+  "line": { "prefix": "u-line", "body": ["<u-line></u-line>"], "description": "line" },
+  "card": { "prefix": "u-card", "body": ["<u-card></u-card>"], "description": "card" },
+  "mask": { "prefix": "u-mask", "body": ["<u-mask></u-mask>"], "description": "mask" },
+  "no-network": { "prefix": "u-no-network", "body": ["<u-no-network></u-no-network>"], "description": "noNetwork" },
+  "grid": { "prefix": "u-grid", "body": ["<u-grid></u-grid>"], "description": "grid" },
+  "swiper": { "prefix": "u-swiper", "body": ["<u-swiper></u-swiper>"], "description": "swiper" },
+  "time-line": { "prefix": "u-time-line", "body": ["<u-time-line></u-time-line>"], "description": "timeLine" },
+  "skeleton": { "prefix": "u-skeleton", "body": ["<u-skeleton></u-skeleton>"], "description": "skeleton" },
+  "sticky": { "prefix": "u-sticky", "body": ["<u-sticky></u-sticky>"], "description": "sticky" },
+  "waterfall": { "prefix": "u-waterfall", "body": ["<u-waterfall></u-waterfall>"], "description": "waterfall" },
+  "divider": { "prefix": "u-divider", "body": ["<u-divider></u-divider>"], "description": "divider" },
+  "dropdown": { "prefix": "u-dropdown", "body": ["<u-dropdown></u-dropdown>"], "description": "dropdown" },
+  "tabbar": { "prefix": "u-tabbar", "body": ["<u-tabbar></u-tabbar>"], "description": "tabbar" },
+  "back-top": { "prefix": "u-back-top", "body": ["<u-back-top></u-back-top>"], "description": "backTop" },
+  "navbar": { "prefix": "u-navbar", "body": ["<u-navbar></u-navbar>"], "description": "navbar" },
+  "tabs": { "prefix": "u-tabs", "body": ["<u-tabs></u-tabs>"], "description": "tabs" },
+  "tabs-swiper": {
+    "prefix": "u-tabs-swiper",
+    "body": ["<u-tabs-swiper></u-tabs-swiper>"],
+    "description": "tabsSwiper"
+  },
+  "subsection": { "prefix": "u-subsection", "body": ["<u-subsection></u-subsection>"], "description": "subsection" },
+  "index-list": { "prefix": "u-index-list", "body": ["<u-index-list></u-index-list>"], "description": "indexList" },
+  "steps": { "prefix": "u-steps", "body": ["<u-steps></u-steps>"], "description": "steps" },
+  "empty": { "prefix": "u-empty", "body": ["<u-empty></u-empty>"], "description": "empty" },
+  "link": { "prefix": "u-link", "body": ["<u-link></u-link>"], "description": "link" },
+  "section": { "prefix": "u-section", "body": ["<u-section></u-section>"], "description": "section" },
+  "parse": { "prefix": "u-parse", "body": ["<u-parse></u-parse>"], "description": "parse" },
+  "message-input": {
+    "prefix": "u-message-input",
+    "body": ["<u-message-input></u-message-input>"],
+    "description": "messageInput"
+  },
+  "avatar-cropper": {
+    "prefix": "u-avatar-cropper",
+    "body": ["<u-avatar-cropper></u-avatar-cropper>"],
+    "description": "avatarCropper"
+  },
+  "load-more": { "prefix": "u-load-more", "body": ["<u-load-more></u-load-more>"], "description": "loadMore" },
+  "read-more": { "prefix": "u-read-more", "body": ["<u-read-more></u-read-more>"], "description": "readMore" },
+  "lazy-load": { "prefix": "u-lazy-load", "body": ["<u-lazy-load></u-lazy-load>"], "description": "lazyLoad" },
+  "gap": { "prefix": "u-gap", "body": ["<u-gap></u-gap>"], "description": "gap" },
+  "avatar": { "prefix": "u-avatar", "body": ["<u-avatar></u-avatar>"], "description": "avatar" },
+  "loading": { "prefix": "u-loading", "body": ["<u-loading></u-loading>"], "description": "loading" }
 }

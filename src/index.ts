@@ -1,6 +1,16 @@
 import { HoverProvider, TextDocument, Position, CancellationToken, Hover, Range } from 'vscode';
 import * as uview from './components/index';
 
+const allComponent = Object.values(uview)
+  .filter((o) => {
+    return !(typeof o === 'function');
+  })
+  .map((o) => {
+    if (!(typeof o === 'function')) {
+      return o.prefix;
+    }
+  });
+
 export default class ProvideHover implements HoverProvider {
   provideHover(
     document: TextDocument,
@@ -9,36 +19,49 @@ export default class ProvideHover implements HoverProvider {
   ): import('vscode').ProviderResult<import('vscode').Hover> {
     const wordRange = document.getWordRangeAtPosition(position);
     const word = document.getText(wordRange);
+    let comp: string = '';
+    const reg = new RegExp('u-' + word);
 
-    const allComponent = Object.keys(uview);
-    if (allComponent.includes(word)) {
-      if (!wordRange) {
-        return;
-      }
+    if (
+      allComponent.some((s) => {
+        if (!s) {
+          return false;
+        }
 
-      const start = wordRange.start;
-      if (!(start.character > 2)) {
-        return;
-      }
-      const newStart = new Position(start.line, start.character - 2);
-      const ran = new Range(newStart, wordRange.end);
-      const tWord = document.getText(ran);
+        if (reg.test(s)) {
+          comp = s;
+          return true;
+        }
+        return false;
+      })
+    ) {
+      if (!!comp) {
+        let t = comp.replace(/-([a-z])/g, function (all, letter) {
+          return letter.toUpperCase();
+        });
+        t = t.substring(1);
+        t = t.replace(/^([A-Z])/, function (all, letter) {
+          return letter.toLowerCase();
+        });
 
-      if (/u\-.*/.test(tWord)) {
-        return new Hover(this.getComponentInfo(uview[word]));
+        return new Hover(this.getComponentInfo(uview[t]));
       }
     }
   }
 
   private getComponentInfo(component: uview.Component): string {
-    const { description, props, events, slot, getOthersInfo } = component;
-    let t = '* props \n';
+    const { description, props, events, slot, methods, url } = component;
+    let t = '';
     try {
-      const propList = Object.keys(props);
-      propList.forEach((key) => {
-        t += `  * **${key}**: {*${props[key].type || 'string'}*} ${props[key].default || ''} ${props[key].options || ''} ${props[key].desc} \r\n`;
-      });
-
+      if (props) {
+        const propList = Object.keys(props);
+        t += '* props \n';
+        propList.forEach((key) => {
+          t += `  * **${key}**: {*${props[key].type || 'string'}*} ${props[key].default || ''} ${
+            props[key].options || ''
+          } ${props[key].desc} \r\n`;
+        });
+      }
       if (events) {
         const eventsList = Object.keys(events);
         t += '* events \n';
@@ -55,13 +78,19 @@ export default class ProvideHover implements HoverProvider {
         });
       }
 
-      if (getOthersInfo) {
-        t += getOthersInfo.call(component);
+      if (methods) {
+        const methList = Object.keys(methods);
+        t += '* methods \n';
+        methList.forEach((key) => {
+          t += ` * **${key}**: ${methods[key].desc} \n`;
+        });
       }
+
+      t += uview.getOthersInfo.call(component);
     } catch (e) {
       console.log(e);
     }
 
-    return `**${description}** \n***\n${t}`;
+    return `**${description}** <${url}>\n***\n${t}`;
   }
 }
