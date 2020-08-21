@@ -1,9 +1,9 @@
 ## Features
 
-![auto](./icon/1.gif)
+![auto](https://github.com/Sieunyue/vscode-uview-plugin/blob/master/icon/1.gif?raw=true)
 
 
-![auto](./icon/2.gif)
+![auto](https://github.com/Sieunyue/vscode-uview-plugin/blob/master/icon/2.gif?raw=true)
 
 ## Known Issues
 
